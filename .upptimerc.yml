@@ -9,7 +9,7 @@ sites:
       type: tcp
       port: 443
       from: "Western Europe, Russia"
-      
+ 
   - name: "198.241.150.240"
     url: 198.241.150.240
     check-type: globalping
@@ -17,7 +17,7 @@ sites:
       type: tcp
       port: 443
       from: "Western Europe, Russia"
-	  
+	
   - name: "198.217.243.16"
     url: 198.217.243.16
     check-type: globalping
@@ -25,8 +25,7 @@ sites:
       type: tcp
       port: 443
       from: "Western Europe, Russia"
-
-- name: "8.8.8.8"
+  - name: "8.8.8.8"
     url: 8.8.8.8
     check-type: globalping
     globalping:
