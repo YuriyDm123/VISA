@@ -1,4 +1,0 @@
-yaml
-on:
-  schedule:
-    - cron: "*/5 * * * *"
