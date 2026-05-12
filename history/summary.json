@@ -1,22 +1,20 @@
 [
   {
-    "name": "Мой Сервер",
-    "url": "198.241.184.92",
+    "name": "198.241.184.92",
+    "url": "8.8.8.8",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
-    "slug": "moj-server",
+    "slug": "198-241-184-92",
     "status": "down",
-    "uptime": "7.15%",
-    "uptimeDay": "7.15%",
-    "uptimeWeek": "7.15%",
-    "uptimeMonth": "7.15%",
-    "uptimeYear": "7.15%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
-    "dailyMinutesDown": {
-      "2026-05-12": 63
-    }
+    "dailyMinutesDown": {}
   }
 ]
