@@ -1,14 +1,14 @@
-owner: YuriyDm123
- repo: VISA
+yamlowner: YuriyDm123
+repo: VISA
 
 sites:
   - name: "Мой Сервер"
-    url: 198.241.184.92  # ЗАМЕНИТЕ на ваш IP
+    url: 198.241.184.92
     check-type: globalping
     globalping:
       type: tcp
-      port: 443  # ЗАМЕНИТЕ на ваш порт
-      from: "Western Europe, Russia" # Откуда проверять
+      port: 443
+      from: "Western Europe, Russia"
 
 # Если хотите получать уведомления в Telegram (необязательно)
 # notifications:
