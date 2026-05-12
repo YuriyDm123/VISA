@@ -3,6 +3,30 @@ repo: VISA
 
 sites:
   - name: "198.241.184.92"
+    url: 198.241.184.92
+    check-type: globalping
+    globalping:
+      type: tcp
+      port: 443
+      from: "Western Europe, Russia"
+      
+  - name: "198.241.150.240"
+    url: 198.241.150.240
+    check-type: globalping
+    globalping:
+      type: tcp
+      port: 443
+      from: "Western Europe, Russia"
+	  
+  - name: "198.217.243.16"
+    url: 198.217.243.16
+    check-type: globalping
+    globalping:
+      type: tcp
+      port: 443
+      from: "Western Europe, Russia"
+
+- name: "8.8.8.8"
     url: 8.8.8.8
     check-type: globalping
     globalping:
