@@ -10,9 +10,3 @@ sites:
       type: tcp
       port: 443
       from: "Western Europe, Russia"
-
-# Если хотите получать уведомления в Telegram (необязательно)
-# notifications:
-#   - type: telegram
-#     chatId: "ВАШ_ID"
-#     botToken: "ТОКЕН_БОТА"
