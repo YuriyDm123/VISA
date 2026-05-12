@@ -2,8 +2,8 @@ owner: YuriyDm123
 repo: VISA
 
 sites:
-  - name: "Мой Сервер"
-    url: 198.241.184.92
+  - name: "198.241.184.92"
+    url: 8.8.8.8
     check-type: globalping
     globalping:
       type: tcp
