@@ -1,6 +1,7 @@
 owner: YuriyDm123
 repo: VISA
 
+sites:
 - name: "ping_8.8.8.8"
   url: "dns.google"
   type: globalping
