@@ -1,22 +1,22 @@
 [
   {
     "name": "ping_8.8.8.8",
-    "url": "8.8.8.8",
+    "url": "dns.google",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "ping-8-8-8-8",
-    "status": "down",
-    "uptime": "1.37%",
-    "uptimeDay": "1.37%",
-    "uptimeWeek": "1.37%",
-    "uptimeMonth": "1.37%",
-    "uptimeYear": "1.37%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
+    "status": "up",
+    "uptime": "0.48%",
+    "uptimeDay": "0.48%",
+    "uptimeWeek": "0.48%",
+    "uptimeMonth": "0.48%",
+    "uptimeYear": "0.48%",
+    "time": 5,
+    "timeDay": 5,
+    "timeWeek": 5,
+    "timeMonth": 5,
+    "timeYear": 5,
     "dailyMinutesDown": {
-      "2026-05-13": 15
+      "2026-05-13": 56
     }
   }
 ]
