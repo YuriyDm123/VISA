@@ -2,14 +2,14 @@ owner: YuriyDm123
 repo: VISA
 
 sites:
-- name: "ping_8.8.8.8"
+- name: "53_8.8.8.8"
   url: "dns.google"
   type: globalping
   check: tcp-ping
   port: 53
   location: "Western Europe"
 
-- name: "198.241.150.240"
+- name: "443_198.241.150.240"
   url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
@@ -17,7 +17,7 @@ sites:
   target: "198.241.150.240"
   location: "Western Europe"
   
-- name: "198.241.184.92"
+- name: "443_198.241.184.92"
   url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
@@ -25,7 +25,7 @@ sites:
   target: "198.241.184.92"
   location: "Western Europe"
 
-- name: "198.217.243.16"
+- name: "443_198.217.243.16"
   url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
@@ -33,7 +33,7 @@ sites:
   target: "198.217.243.16"
   location: "Western Europe"
 
-- name: "198.241.150.240_KZ"
+- name: "443_198.241.150.240_KZ"
   url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
@@ -41,7 +41,7 @@ sites:
   target: "198.241.150.240"
   location: "KZ"
   
-- name: "198.241.184.92_KZ"
+- name: "443_198.241.184.92_KZ"
   url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
@@ -49,7 +49,7 @@ sites:
   target: "198.241.184.92"
   location: "KZ"
 
-- name: "198.217.243.16_KZ"
+- name: "443_198.217.243.16_KZ"
   url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
@@ -57,7 +57,7 @@ sites:
   target: "198.217.243.16"
   location: "KZ"
   
-- name: "198.241.150.240_RU"
+- name: "443_198.241.150.240_RU"
   url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
@@ -65,7 +65,7 @@ sites:
   target: "198.241.150.240"
   location: "RU"
   
-- name: "198.241.184.92_RU"
+- name: "443_198.241.184.92_RU"
   url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
@@ -73,7 +73,7 @@ sites:
   target: "198.241.184.92"
   location: "RU"
 
-- name: "198.217.243.16_RU"
+- name: "443_198.217.243.16_RU"
   url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
