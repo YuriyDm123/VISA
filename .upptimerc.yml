@@ -88,7 +88,7 @@ sites:
   target: "43.159.113.78"
   location: "KZ"
   globalping:
-   packets: 5
+     packets: 5
 
 - name: "PING_43.159.112.78_KZ"
   url: "safepass.unionpayintl.com"
@@ -97,4 +97,4 @@ sites:
   target: "43.159.112.78"
   location: "KZ"
   globalping:
-   packets: 5
+     packets: 5
