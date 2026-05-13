@@ -1,0 +1,39 @@
+name: Network Route Monitor
+
+on:
+  schedule:
+    # Запуск каждый час (можно настроить чаще, например `*/15 * * * *`)
+    - cron: '0 * * * *'
+  workflow_dispatch: # Позволяет запускать мониторинг вручную кнопкой в интерфейсе
+
+jobs:
+  traceroute-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install traceroute
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y traceroute
+
+    - name: Run Traceroute and Save Log
+      run: |
+        TARGET="43.159.113.78" # Укажите ваш целевой домен или IP-адрес
+        TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+        mkdir -p logs
+        
+        echo "=== Traceroute to $TARGET at $TIMESTAMP ===" > logs/route_$TIMESTAMP.log
+        
+        # Запуск ICMP traceroute (флаг -I), так как обычный UDP часто блокируется облаками
+        sudo traceroute -I $TARGET >> logs/route_$TIMESTAMP.log || true
+
+    - name: Commit and Push logs
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add logs/
+        git commit -m "Add traceroute log for $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+        git push
