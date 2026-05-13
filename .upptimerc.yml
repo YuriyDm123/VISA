@@ -10,22 +10,23 @@ sites:
   location: "Western Europe"
 
 - name: "198.241.150.240"
-  url: "198.241.150.240"
+  url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
   port: 443
+  target: "198.241.150.240"
   location: "Western Europe"
 
-- name: "198.241.184.92"
-  url: "198.241.184.92"
-  type: globalping
-  check: tcp-ping
-  port: 443
-  location: "Western Europe"
+#- name: "198.241.184.92"
+ # url: "198.241.184.92"
+  #type: globalping
+  #check: tcp-ping
+  #port: 443
+  #location: "Western Europe"
 
-- name: "198.217.243.16"
-  url: "198.217.243.16"
-  type: globalping
-  check: tcp-ping
-  port: 443
-  location: "Western Europe"
+#- name: "198.217.243.16"
+#  url: "198.217.243.16"
+ # type: globalping
+  #check: tcp-ping
+#  port: 443
+ # location: "Western Europe"
