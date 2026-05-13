@@ -13,7 +13,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # Добавлен обязательный шаг установки сетевых утилит
     - name: Install Network Tools
       run: |
         sudo apt-get update
@@ -30,14 +29,18 @@ jobs:
           TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
           mkdir -p logs
           
+          # Автоматическое удаление файлов логов старше 3 дней
+          find logs/ -type f -name "*.log" -mtime +3 -delete || true
+          
           for TARGET in "${TARGETS[@]}"; do
             echo "=== TCP Traceroute to $TARGET at $TIMESTAMP ===" >> logs/route_$TIMESTAMP.log
             sudo traceroute -T -p 80 "$TARGET" >> logs/route_$TIMESTAMP.log 2>&1 || true
             echo -e "\n\n" >> logs/route_$TIMESTAMP.log
           done
           
+          # Фиксация изменений (включая удаление старых файлов)
           git add logs/
-          git commit -m "Add traceroute log for $TIMESTAMP" || echo "No changes"
+          git commit -m "Update logs (Cleanup & New trace $TIMESTAMP)" || echo "No changes"
           git push || echo "Push failed, retrying next time"
           
           echo "Waiting 5 minutes before next check..."
