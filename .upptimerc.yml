@@ -2,11 +2,11 @@ owner: YuriyDm123
 repo: VISA
 
 - name: "ping_8.8.8.8"
-    url: "dns.google"
-    type: globalping
-    check: tcp-ping
-    port: 53
-    location: "Western Europe"
+  url: "dns.google"
+  type: globalping
+  check: tcp-ping
+  port: 53
+  location: "Western Europe"
    # - name: "198.241.150.240"
   #  url: "198.241.150.240"
    # type: globalping
