@@ -14,26 +14,25 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Install tcptraceroute
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y tcptraceroute
-
     - name: Run Traceroute and Save Log
       run: |
-        TARGET="43.159.113.78" # Укажите ваш целевой домен или IP-адрес
+        TARGETS=("43.159.113.78") 
         TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
         mkdir -p logs
         
-        echo "=== Traceroute to $TARGET at $TIMESTAMP ===" > logs/route_$TIMESTAMP.log
-        
-        # Запуск ICMP traceroute (флаг -I), так как обычный UDP часто блокируется облаками
-        sudo traceroute -I $TARGET >> logs/route_$TIMESTAMP.log || true
+        for TARGET in "${TARGETS[@]}"; do
+          echo "=== TCP Traceroute to $TARGET at $TIMESTAMP ===" >> logs/route_$TIMESTAMP.log
+          
+          # Использование стандартного traceroute с флагом TCP (-T) на 80 порт
+          sudo traceroute -T -p 80 "$TARGET" >> logs/route_$TIMESTAMP.log 2>&1 || true
+          
+          echo -e "\n\n" >> logs/route_$TIMESTAMP.log
+        done
 
     - name: Commit and Push logs
       run: |
         git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --global user.email "41898282+github-actions[bot]@github.com"
         git add logs/
         git commit -m "Add traceroute log for $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
         git push
