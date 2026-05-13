@@ -2,12 +2,18 @@ owner: YuriyDm123
 repo: VISA
 
 sites:
-  - name: "198.241.150.240"
-    url: "198.241.150.240"
-    type: globalping
-    check: tcp-ping
-    port: 443
-    location: "Western Europe"
+ - name: "ping_8.8.8.8"
+   url: "8.8.8.8"
+   type: globalping
+   check: icmp-ping
+   location: "Western Europe"
+	
+ # - name: "198.241.150.240"
+  #  url: "198.241.150.240"
+   # type: globalping
+    #check: tcp-ping
+    #port: 443
+    #location: "Western Europe"
 #	
 #  - name: "198.241.184.92"
  #   url: 198.241.184.92
