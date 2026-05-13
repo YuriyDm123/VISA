@@ -32,3 +32,27 @@ sites:
   port: 443
   target: "198.217.243.16"
   location: "Western Europe"
+
+- name: "198.241.150.240_KZ"
+  url: "3ds.visa.com"
+  type: globalping
+  check: tcp-ping
+  port: 443
+  target: "198.241.150.240"
+  location: "KZ"
+  
+- name: "198.241.184.92_KZ"
+  url: "3ds.visa.com"
+  type: globalping
+  check: tcp-ping
+  port: 443
+  target: "198.241.184.92"
+  location: "KZ"
+
+- name: "198.217.243.16_KZ"
+  url: "3ds.visa.com"
+  type: globalping
+  check: tcp-ping
+  port: 443
+  target: "198.217.243.16"
+  location: "KZ"
