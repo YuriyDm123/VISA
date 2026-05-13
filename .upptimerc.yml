@@ -81,13 +81,13 @@ sites:
   target: "198.217.243.16"
   location: "RU"
 
-- name: "PING_43.159.112.78_KZ"
+- name: "PING_43.159.113.78_KZ"
   url: "safepass.unionpayintl.com"
   type: globalping
   check: icmp-ping
   target: "43.159.113.78"
   location: "KZ"
-  globalping:
+  #globalping:
      packets: 5
 
 - name: "PING_43.159.112.78_KZ"
@@ -96,5 +96,5 @@ sites:
   check: icmp-ping
   target: "43.159.112.78"
   location: "KZ"
-  globalping:
+  #globalping:
      packets: 5
