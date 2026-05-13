@@ -5,7 +5,8 @@ sites:
  - name: "ping_8.8.8.8"
    url: "8.8.8.8"
    type: globalping
-   check: icmp-ping
+   check: tcp-ping
+   port: 53
    location: "Western Europe"
 	
  # - name: "198.241.150.240"
