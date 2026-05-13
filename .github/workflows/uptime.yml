@@ -33,7 +33,6 @@ jobs:
           token: ${{ secrets.GH_PAT || github.token }}
       - name: Check endpoint status
         uses: upptime/uptime-monitor@v1.41.3
-        # continue-on-error: true
         with:
           command: "update"
         env:
