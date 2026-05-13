@@ -25,7 +25,7 @@ sites:
   target: "198.241.184.92"
   location: "Western Europe"
 
-  - name: "198.217.243.16"
+- name: "198.217.243.16"
   url: "3ds.visa.com"
   type: globalping
   check: tcp-ping
