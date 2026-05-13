@@ -10,47 +10,22 @@ sites:
   location: "Western Europe"
 
 - name: "198.241.150.240"
-  url: "3ds2.visa.com"
+  url: "198.241.150.240"
   type: globalping
   check: tcp-ping
   port: 443
   location: "Western Europe"
-  
-   # - name: ""
-  #  url: "198.241.150.240"
-   # type: globalping
-    #check: tcp-ping
-    #port: 443
-    #location: "Western Europe"
-#	
-#  - name: "198.241.184.92"
- #   url: 198.241.184.92
-  #  check-type: globalping
-   # globalping:
-    #  type: tcp-ping
-     # port: 443
-      #from: "Western Europe, Russia"
- #
-  #- name: "198.241.150.240"
-   # url: 198.241.150.240
-    #check-type: globalping
-    #globalping:
-     # type: tcp-ping
-     # port: 443
-     # from: "Western Europe, Russia"
-	#
-#  - name: "198.217.243.16"
-#    url: 198.217.243.16
- #   check-type: globalping
-  #  globalping:
-   #   type: tcp-ping
-    #  port: 443
-     # from: "Western Europe, Russia"
-	 # 
-#  - name: "8.8.8.8"
- #   url: 8.8.8.8
-  #  check-type: globalping
-   # globalping:
-    #  type: tcp-ping
-     # port: 443
-      #from: "Western Europe, Russia"     
+
+- name: "198.241.184.92"
+  url: "198.241.184.92"
+  type: globalping
+  check: tcp-ping
+  port: 443
+  location: "Western Europe"
+
+- name: "198.217.243.16"
+  url: "198.217.243.16"
+  type: globalping
+  check: tcp-ping
+  port: 443
+  location: "Western Europe"
