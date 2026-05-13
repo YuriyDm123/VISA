@@ -8,7 +8,15 @@ sites:
   check: tcp-ping
   port: 53
   location: "Western Europe"
-   # - name: "198.241.150.240"
+
+- name: "198.241.150.240"
+  url: "3ds2.visa.com"
+  type: globalping
+  check: tcp-ping
+  port: 443
+  location: "Western Europe"
+  
+   # - name: ""
   #  url: "198.241.150.240"
    # type: globalping
     #check: tcp-ping
