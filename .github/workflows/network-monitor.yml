@@ -2,9 +2,8 @@ name: Network Route Monitor
 
 on:
   schedule:
-    # Запуск каждый час (можно настроить чаще, например `*/15 * * * *`)
-    - cron: '0 * * * *'
-  workflow_dispatch: # Позволяет запускать мониторинг вручную кнопкой в интерфейсе
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
 
 jobs:
   traceroute-check:
@@ -14,25 +13,33 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Run Traceroute and Save Log
+    # Добавлен обязательный шаг установки сетевых утилит
+    - name: Install Network Tools
       run: |
-        TARGETS=("43.159.113.78") 
-        TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
-        mkdir -p logs
-        
-        for TARGET in "${TARGETS[@]}"; do
-          echo "=== TCP Traceroute to $TARGET at $TIMESTAMP ===" >> logs/route_$TIMESTAMP.log
-          
-          # Использование стандартного traceroute с флагом TCP (-T) на 80 порт
-          sudo traceroute -T -p 80 "$TARGET" >> logs/route_$TIMESTAMP.log 2>&1 || true
-          
-          echo -e "\n\n" >> logs/route_$TIMESTAMP.log
-        done
+        sudo apt-get update
+        sudo apt-get install -y traceroute
 
-    - name: Commit and Push logs
+    - name: Continuous Monitoring Loop
       run: |
+        TARGETS=("43.159.113.78")
+        
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@github.com"
-        git add logs/
-        git commit -m "Add traceroute log for $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-        git push
+        
+        for i in {1..35}; do
+          TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+          mkdir -p logs
+          
+          for TARGET in "${TARGETS[@]}"; do
+            echo "=== TCP Traceroute to $TARGET at $TIMESTAMP ===" >> logs/route_$TIMESTAMP.log
+            sudo traceroute -T -p 80 "$TARGET" >> logs/route_$TIMESTAMP.log 2>&1 || true
+            echo -e "\n\n" >> logs/route_$TIMESTAMP.log
+          done
+          
+          git add logs/
+          git commit -m "Add traceroute log for $TIMESTAMP" || echo "No changes"
+          git push || echo "Push failed, retrying next time"
+          
+          echo "Waiting 5 minutes before next check..."
+          sleep 300
+        done
