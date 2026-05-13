@@ -2,7 +2,7 @@ owner: YuriyDm123
 repo: VISA
 
 sites:
-    name: "198.241.150.240"
+  - name: "198.241.150.240"
     url: "198.241.150.240"
     type: globalping
     check: tcp-ping
